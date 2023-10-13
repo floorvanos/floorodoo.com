@@ -18,9 +18,15 @@ class article(models.Model):
     intro_text = fields.Html('Intro text', translate=True, default="De intro tekst")
     main_text = fields.Html('Main text', translate=True, default="De hoofd tekst" )
     state = fields.Selection(STATE, string='Article Status', store=True,
-        help="It indicates the article status.\n")
+        help="It indicates the article status.\n" default='concept')
     publish_up = fields.Datetime('Publish Up')
     publish_down = fields.Datetime('Publish Down')
+    # select a portal user as author?
+    author = fields.Char('Author', required=True, translate=True)
+    # -----------------------------------
+    show_date = fields.Boolean('Show publishing date', default=False)
+    show_author = fields.Boolean('Show author', default=False)
+    
     
     active = fields.Boolean('Active', default=True)
     
