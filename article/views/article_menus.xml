@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<odoo>
+
+<menuitem id="article_menu_root" name="Articles">
+        <menuitem id="article_menu" name="Content" sequence="5">
+            <menuitem id="article_menu_action" name="Articles" action="article_action" sequence="5"/>
+          <!--  <menuitem id="article_article_cat_menu_action" name="Categories" action="article_article_cat_action" sequence="10"/>
+            <menuitem id="article_article_tag_menu_action" name="Tags" action="article_article_tag_action" sequence="15"/> -->
+        </menuitem>
+        <menuitem id="article_settings_menu" name="Settings" sequence="10">
+      
+          
+        </menuitem>
+</menuitem>
+
+
+</odoo>
