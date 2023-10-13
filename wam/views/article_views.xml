@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
-
-<record id="article_action" model="ir.actions.act_window">
-    <field name="name">Articles</field>
-    <field name="res_model">article</field>
-    <field name="view_mode">tree,form</field>
-</record>
+<odoo>
+    <record id="article_action" model="ir.actions.act_window">
+        <field name="name">Articles</field>
+        <field name="res_model">article</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
