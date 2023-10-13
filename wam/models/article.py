@@ -1,4 +1,6 @@
+from datetime import datetime, time
 from odoo import fields, models
+
 
 class article(models.Model):
     _name = "article"
