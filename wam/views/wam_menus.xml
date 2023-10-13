@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<odoo>
+
+<menuitem id="wam_menu_root" name="Articles">
+        <menuitem id="wam_article_menu" name="Content" sequence="5">
+            <menuitem id="article_menu_action" name="Articles" action="article_action" sequence="5"/>
+        </menuitem>
+</menuitem>
+
+</odoo>
