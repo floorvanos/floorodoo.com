@@ -1,7 +1,13 @@
-# needed?
 from datetime import datetime, time
-# -------------
 from odoo import fields, models
+STATE = [
+    ('concept', 'Concept'),
+    ('approved', 'Approved'),
+    ('awaits', 'Awaits Publishing'),
+    ('published', 'Published'),
+    ('unpublished', 'Unpublished'),
+    ('archived', 'Archived'),
+]
 
 class article(models.Model):
     _name = "article"
@@ -11,7 +17,8 @@ class article(models.Model):
     name = fields.Char('Article Name', required=True, translate=True, default="De titel")
     intro_text = fields.Html('Intro text', translate=True, default="De intro tekst")
     main_text = fields.Html('Main text', translate=True, default="De hoofd tekst" )
-    published = fields.Boolean('Published', default=True)
+    state = fields.Selection(STATE, string='Article Status', store=True,
+        help="It indicates the article status.\n")
     publish_up = fields.Datetime('Publish Up')
     publish_down = fields.Datetime('Publish Down')
     
