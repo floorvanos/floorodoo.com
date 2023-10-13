@@ -12,6 +12,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/article_menus.xml',
+        'views/article_views.xml',
     ],
     'application': True,
 }
