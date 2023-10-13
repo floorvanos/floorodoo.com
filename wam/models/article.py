@@ -5,7 +5,7 @@ from odoo import fields, models
 class article(models.Model):
     _name = "article"
     _description = "Article "
-    _order = "sequence"
+    _order = "id"
 
     name = fields.Char('Article Name', required=True, translate=True)
     intro_text = fields.Html('Intro text', translate=True)
