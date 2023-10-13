@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <record id="article_action" model="ir.actions.act_window">
         <field name="name">Articles</field>
         <field name="type">ir.actions.act_window</field>
