@@ -6,10 +6,10 @@ class article(models.Model):
     _description = "Article "
     _order = "id"
     
-    name = fields.Char('Article Name', required=True, translate=True)
-    intro_text = fields.Html('Intro text', translate=True)
-    main_text = fields.Html('Main text', translate=True)
-    published = fields.Boolean('Published', default=False)
+    name = fields.Char('Article Name', default="De titel" required=True, translate=True)
+    intro_text = fields.Html('Intro text', default="De intro tekst" translate=True)
+    main_text = fields.Html('Main text', default="De hoofd tekst" translate=True)
+    published = fields.Boolean('Published', default=True)
     publish_up = fields.Datetime('Publish Up')
     publish_down = fields.Datetime('Publish Down')
     
