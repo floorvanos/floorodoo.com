@@ -9,7 +9,7 @@ class article(models.Model):
     @tools.ormcache()
     def _get_default_category_id(self):
         # Deletion forbidden (at least through unlink)
-        return self.env.ref('product.product_category_all')
+        return self.env.ref('article.article_category_all')
 
     def _read_group_categ_id(self, categories, domain, order):
         category_ids = self.env.context.get('default_categ_id')
