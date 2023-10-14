@@ -6,9 +6,9 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-     <record id="wam_article_view_tree" model="ir.ui.view">
-        <field name="name">wam.article.tree</field>
-        <field name="model">wam.article</field>
+     <record id="article_view_tree" model="ir.ui.view">
+        <field name="name">article.tree</field>
+        <field name="model">article</field>
         <field name="arch" type="xml">
             <tree string="Articles">
                 <field nam="published"/>
