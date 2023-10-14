@@ -13,6 +13,7 @@
             <tree string="Articles">
                 <field name="published"/>
                 <field name="name"/>
+				<field name="category_id"/>
             </tree>
         </field>
     </record>
