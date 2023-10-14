@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <odoo>
-    <record id="article_action" model="ir.actions.act_window">
-        <field name="name">Articles</field>
-        <field name="res_model">article</field>
+    <record id="wam_article_action" model="ir.actions.act_window">
+        <field name="name">wam.article.form/field>
+        <field name="res_model">wam.article</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <record id="article_view_tree" model="ir.ui.view">
-        <field name="name">article.tree</field>
-        <field name="model">article</field>
+        <field name="name">wam.article.tree</field>
+        <field name="model">wam.article</field>
         <field name="arch" type="xml">
             <tree string="Articles">
                 <field name="published"/>
@@ -18,8 +18,8 @@
     </record>
 
     <record id="article_view_form" model="ir.ui.view">
-        <field name="name">article.form</field>
-        <field name="model">article</field>
+        <field name="name">wam.article.form</field>
+        <field name="model">wam.article</field>
         <field name="arch" type="xml">
             <form string="Article">
                 <sheet>
