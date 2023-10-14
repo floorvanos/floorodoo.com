@@ -67,7 +67,6 @@
                 <search string="Search Articles">
                		<field name="name"/>
 					<field name="category_id"/>
-					<!-- <field name="published"/> -->
 					<filter string="Published" name="published" domain="[('published', '=', True)]"/>
 					<filter string="Unpublished" name="unpublished" domain="[('published', '=', False)]"/>
                 </search>
