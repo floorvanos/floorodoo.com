@@ -13,6 +13,7 @@
         'security/ir.model.access.csv',
         'views/wam_article_views.xml',
         'views/wam_article_category_views.xml',
+        'views/wam_article_tag_views.xml',
         'views/wam_menus.xml',
     ],
     'application': True,

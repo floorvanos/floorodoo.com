@@ -4,7 +4,8 @@
 <menuitem id="wam_menu_root" name="Articles">
         <menuitem id="wam_article_menu" name="Content" sequence="5">
         	<menuitem id="wam_article_menu_action" name="Articles" action="wam_article_action" sequence="5"/>
-		<menuitem id="wam_article_category_menu_action" name="Categories" action="wam_article_category_action" sequence="5"/>
+			<menuitem id="wam_article_category_menu_action" name="Categories" action="wam_article_category_action" sequence="5"/>
+			<menuitem id="wam_article_tag_menu_action" name="Tags" action="wam_article_tag_action" sequence="5"/>
         </menuitem>
 </menuitem>
 

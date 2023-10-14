@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_wam_article,wam.article,model_wam_article,base.group_user,1,1,1,1
 access_wam_article_category,wam.article.category,model_wam_article_category,base.group_user,1,1,1,1
+access_wam_article_tag,wam.article.tag,model_wam_article_tag,base.group_user,1,1,1,1
