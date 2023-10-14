@@ -5,7 +5,7 @@ class WamArticleCategory(models.Model):
     _description = "Article Category"
     _order = "name"
     
-    name = fields.Char('Article Name', required=True, translate=True, default="De titel")
+    name = fields.Char('Article Category Name', required=True, translate=True, default="De titel")
     published = fields.Boolean('Published', default=True)
     publish_up = fields.Datetime('Publish Up')
     publish_down = fields.Datetime('Publish Down')
