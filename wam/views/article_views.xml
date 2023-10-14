@@ -11,7 +11,7 @@
         <field name="model">article</field>
         <field name="arch" type="xml">
             <tree string="Articles">
-                <field nam="published"/>
+                <field name="published"/>
                 <field name="name"/>
             </tree>
         </field>
