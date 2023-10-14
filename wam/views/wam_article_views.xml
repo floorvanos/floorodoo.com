@@ -31,6 +31,18 @@
                         <h1 class="mb32">
                             <field name="name" class="mb16"/>
                         </h1>
+                         <group>
+                            <group name="article">
+                                <field name="intro_text"/>
+                                <field name="main_text"/>
+                            </group>
+                              <group name="publishing">
+                                <field name="author">
+                                <field name="published"/>
+                                <field name="publish_up"/>
+                                <field name="publish_down"/>
+                              </group>
+                            </group>
                         <field name="active" invisible="1"/>
                     </div>
                 </sheet>
