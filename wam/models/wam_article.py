@@ -12,6 +12,7 @@ class WamArticle(models.Model):
     published = fields.Boolean('Published', default=True)
     publish_up = fields.Datetime('Publish Up')
     publish_down = fields.Datetime('Publish Down')
+    author_id = fields.Many2one("res.partner", string="Author")
     
     active = fields.Boolean('Active', default=True)
     
