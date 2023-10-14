@@ -29,12 +29,12 @@
                             <label for="name"/>
                         </div>
                         <h1 class="mb32">
-                            <field name="name" class="mb16"/>
+                            <field name="name" class="mb16" placeholder="De titel"/>
                         </h1>
                          <group>
                             <group name="article">
-                                <field name="intro_text"/>
-                                <field name="main_text"/>
+                                <field name="intro_text" placeholder="Intro tekst"/>
+                                <field name="main_text" placeholder="Hoofd tekst"/>
                             </group>
                               <group name="publishing">
                                 <field name="author_id"/>
