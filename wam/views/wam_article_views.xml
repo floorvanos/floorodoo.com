@@ -59,5 +59,17 @@
             </form>
         </field>
     </record>
+	
+	<record id="article_view_filter" model="ir.ui.view">
+            <field name="name">wam.article.select</field>
+            <field name="model">wam.article</field>
+            <field name="arch" type="xml">
+                <search string="Search Articles">
+               		<field name="name">
+			<field name="category_id">
+			<field name="published">
+                </search>
+            </field>
+        </record>
 
 </odoo>
