@@ -39,10 +39,12 @@
 							<notebook>
 								<page string="publishing">
 								<group>
-									<field name="author_id"/>
-									<field name="published"/>
-									<field name="publish_up"/>
-									<field name="publish_down"/>
+									<group>
+										<field name="author_id"/>
+										<field name="published"/>
+										<field name="publish_up"/>
+										<field name="publish_down"/>
+										</group>
 									</group>
 								</page>
 								<page string="settings">
