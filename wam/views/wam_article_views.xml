@@ -31,18 +31,22 @@
                         <h1 class="mb32">
                             <field name="name" class="mb16" placeholder="De titel"/>
                         </h1>
-                         <group>
-                            <group name="article">
-                                <field name="intro_text" placeholder="Intro tekst"/>
-                                <field name="main_text" placeholder="Hoofd tekst"/>
-                            </group>
-                              <group name="publishing">
-                                <field name="author_id"/>
-                                <field name="published"/>
-                                <field name="publish_up"/>
-                                <field name="publish_down"/>
-                              </group>
-                            </group>
+						<group>
+							<group name="article">
+								<field name="intro_text" placeholder="Intro tekst"/>
+								<field name="main_text" placeholder="Hoofd tekst"/>
+							</group>
+							<notebook>
+								<page string="publishing">
+									<field name="author_id"/>
+									<field name="published"/>
+									<field name="publish_up"/>
+									<field name="publish_down"/>
+								</page>
+								<page string="settings">
+								</page>
+							</notebook>
+						</group>
                         <field name="active" invisible="1"/>
                     </div>
                 </sheet>
