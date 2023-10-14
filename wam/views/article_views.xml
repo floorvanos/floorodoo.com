@@ -5,4 +5,15 @@
         <field name="res_model">article</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+     <record id="wam_article_view_tree" model="ir.ui.view">
+        <field name="name">wam.article.tree</field>
+        <field name="model">wam.article</field>
+        <field name="arch" type="xml">
+            <tree string="Articles">
+                <field nam="published"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
 </odoo>
