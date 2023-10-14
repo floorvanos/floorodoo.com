@@ -36,7 +36,7 @@
                                 <field name="intro_text"/>
                                 <field name="main_text"/>
                             </group>
-                              <group name="publishing"/>
+                              <group name="publishing">
                                 <field name="author"/>
                                 <field name="published"/>
                                 <field name="publish_up"/>
