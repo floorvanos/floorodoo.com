@@ -1,1 +1,1 @@
-from . import article
+from . import wam_article
