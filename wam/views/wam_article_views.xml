@@ -65,9 +65,9 @@
             <field name="model">wam.article</field>
             <field name="arch" type="xml">
                 <search string="Search Articles">
-               		<field name="name">
-			<field name="category_id">
-			<field name="published">
+               		<field name="name"/>
+			<field name="category_id"/>
+			<field name="published"/>
                 </search>
             </field>
         </record>
