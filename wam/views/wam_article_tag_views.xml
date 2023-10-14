@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <odoo>
     <record id="wam_article_tag_action" model="ir.actions.act_window">
-        <field name="name">wam.article.tag.form</field>
+        <field name="name">Article Tags</field>
         <field name="res_model">wam.article.tag</field>
         <field name="view_mode">tree,form</field>
     </record>
@@ -18,7 +18,7 @@
     </record>
 
     <record id="article_tag_view_form" model="ir.ui.view">
-        <field name="name">wam.article.tag.form</field>
+        <field name="name">Article Tag Details</field>
         <field name="model">wam.article.tag</field>
         <field name="arch" type="xml">
             <form string="Article Tag">
