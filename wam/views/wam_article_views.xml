@@ -40,6 +40,7 @@
 								<page string="publishing">
 								<group>
 									<group>
+										<field name="category_id"/>
 										<field name="author_id"/>
 										<field name="published"/>
 										<field name="publish_up"/>

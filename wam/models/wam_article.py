@@ -13,6 +13,7 @@ class WamArticle(models.Model):
     publish_up = fields.Datetime('Publish Up')
     publish_down = fields.Datetime('Publish Down')
     author_id = fields.Many2one('res.users', string='Author', index=True, tracking=True, default=lambda self: self.env.user)
+    category_id = fields.Many2one('wam.article.category', string='Category', index=True, tracking=True)
     
     active = fields.Boolean('Active', default=True)
     
