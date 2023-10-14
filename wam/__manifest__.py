@@ -11,7 +11,7 @@
     ],
     'data': [
         'security/ir.model.access.csv',
-        'views/article_views.xml',
+        'views/wam_article_views.xml',
         'views/wam_menus.xml',
     ],
     'application': True,
