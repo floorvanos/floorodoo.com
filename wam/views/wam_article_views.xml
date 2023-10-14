@@ -67,7 +67,7 @@
                 <search string="Search Articles">
                		<field name="name"/>
 			<field name="category_id"/>
-			<field name="published"/>
+			<!-- <field name="published"/> -->
                 </search>
             </field>
         </record>
