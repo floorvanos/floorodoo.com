@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="wam_article_category_action" model="ir.actions.act_window">
+        <field name="name">wam.article.category.form</field>
+        <field name="res_model">wam.article.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="article_category_view_tree" model="ir.ui.view">
+        <field name="name">wam.article.category.tree</field>
+        <field name="model">wam.article.category</field>
+        <field name="arch" type="xml">
+            <tree string="Article Categories">
+                <field name="published"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="article_category_view_form" model="ir.ui.view">
+        <field name="name">wam.article.category.form</field>
+        <field name="model">wam.article.category</field>
+        <field name="arch" type="xml">
+            <form string="Article Category">
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <div class="oe_title">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1 class="mb32">
+                            <field name="name" class="mb16"/>
+                        </h1>
+                        <field name="active" invisible="1"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
