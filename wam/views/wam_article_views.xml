@@ -69,7 +69,7 @@
             <field name="model">wam.article</field>
             <field name="arch" type="xml">
                 <search string="Search Articles">
-               		<field name="name"/>
+               		<field name="Fname"/>
 					<field name="category_id"/>
 					<filter string="Published" name="published" domain="[('published', '=', True)]"/>
 					<filter string="Unpublished" name="unpublished" domain="[('published', '=', False)]"/>
