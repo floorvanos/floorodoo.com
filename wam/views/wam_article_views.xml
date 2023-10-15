@@ -12,7 +12,7 @@
         <field name="arch" type="xml">
             <tree string="Articles">
                 <field name="published"/>
-                <field name="name"/>
+                <field name="Fname"/>
 				<field name="category_id"/>
             </tree>
         </field>
@@ -27,18 +27,18 @@
                     <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
                     <div class="oe_title">
                         <div class="oe_edit_only">
-                            <label for="name"/>
+                            <label for="Fname"/>
                         </div>
                         <h1 class="mb32">
-                            <field name="name" class="mb16" placeholder="De titel"/>
+                            <field name="Fname" class="mb16" placeholder="De titel"/>
                         </h1>
 			<group>
 				<notebook>
 					<page string="Content">	
 						<group>
 							<group name="article">
-								<field name="intro_text" placeholder="Intro tekst"/>
-								<field name="main_text" placeholder="Hoofd tekst"/>
+								<field name="Fintro_text" placeholder="Intro tekst"/>
+								<field name="Fmain_text" placeholder="Hoofd tekst"/>
 							</group>
 						</group>
 					</page>
