@@ -13,8 +13,8 @@
             <tree string="Articles">
                 <field name="published"/>
                 <field name="fvo_name"/>
-		<field name="category_ids"/>
-		<field name="tag_ids"/>
+		<field name="category_ids" widget="many2many_tags"/>
+		<field name="tag_ids" widget="many2many_tags"/>
             </tree>
         </field>
     </record>
