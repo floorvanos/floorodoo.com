@@ -47,6 +47,6 @@ class WamArticle(models.Model):
     def _compute_is_archived(self):
         now = datetime.now()
         for record in self:
-            if record.archive
+            if record.archive:
                 record.active = now < record.archive
 
