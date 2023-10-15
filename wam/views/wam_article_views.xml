@@ -12,8 +12,8 @@
         <field name="arch" type="xml">
             <tree string="Articles">
                 <field name="published"/>
-                <field name="Fname"/>
-				<field name="category_id"/>
+                <field name="fvo_name"/>
+		<field name="category_id"/>
             </tree>
         </field>
     </record>
@@ -27,18 +27,18 @@
                     <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
                     <div class="oe_title">
                         <div class="oe_edit_only">
-                            <label for="Fname"/>
+                            <label for="fvo_name"/>
                         </div>
                         <h1 class="mb32">
-                            <field name="Fname" class="mb16" placeholder="De titel"/>
+                            <field name="fvo_name" class="mb16" placeholder="De titel"/>
                         </h1>
 			<group>
 				<notebook>
 					<page string="Content">	
 						<group>
 							<group name="article">
-								<field name="Fintro_text" placeholder="Intro tekst"/>
-								<field name="Fmain_text" placeholder="Hoofd tekst"/>
+								<field name="fvo_intro_text" placeholder="Intro tekst"/>
+								<field name="fvo_main_text" placeholder="Hoofd tekst"/>
 							</group>
 						</group>
 					</page>
@@ -69,10 +69,10 @@
             <field name="model">wam.article</field>
             <field name="arch" type="xml">
                 <search string="Search Articles">
-               		<field name="Fname"/>
-					<field name="category_id"/>
-					<filter string="Published" name="published" domain="[('published', '=', True)]"/>
-					<filter string="Unpublished" name="unpublished" domain="[('published', '=', False)]"/>
+               		<field name="fvo_name"/>
+			<field name="category_id"/>
+			<filter string="Published" name="published" domain="[('published', '=', True)]"/>
+			<filter string="Unpublished" name="unpublished" domain="[('published', '=', False)]"/>
                 </search>
             </field>
         </record>
