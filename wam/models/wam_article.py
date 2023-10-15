@@ -1,5 +1,5 @@
 from datetime import datetime, time
-from odoo import fields, models
+from odoo import api, fields, models
 
 class WamArticle(models.Model):
     _name = "wam.article"
@@ -9,7 +9,7 @@ class WamArticle(models.Model):
     name = fields.Char('Article Name', required=True, translate=True)
     intro_text = fields.Html('Intro text', translate=True)
     main_text = fields.Html('Main text', translate=True)
-    published = fields.Boolean('Published', default=True)
+    published = fields.Boolean('Published')
     publish_up = fields.Datetime('Publish Up')
     publish_down = fields.Datetime('Publish Down')
     author_id = fields.Many2one('res.users', string='Author', index=True, tracking=True, default=lambda self: self.env.user)
@@ -18,8 +18,8 @@ class WamArticle(models.Model):
     
     active = fields.Boolean('Active', default=True)
     
-# @api.depends('date_begin', 'date_end')
-#    def _compute_is_ongoing(self):
-#        now = fields.Datetime.now()
-#        for event in self:
-#            event.is_ongoing = event.date_begin <= now < event.date_end
+    @api.depends('publish_up', 'publish_down')
+    def _compute_is_published(self):
+        now = fields.Datetime.now()
+        for record in self:
+            record.published = record.publish_up <= now < record.publish_down
