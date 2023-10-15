@@ -32,28 +32,31 @@
                         <h1 class="mb32">
                             <field name="name" class="mb16" placeholder="De titel"/>
                         </h1>
+			<group>
+				<notebook>
+					<page string="Content">	
 						<group>
 							<group name="article">
 								<field name="intro_text" placeholder="Intro tekst"/>
 								<field name="main_text" placeholder="Hoofd tekst"/>
 							</group>
-							<notebook>
-								<page string="publishing">
-									<group>
-										<group>
-											<field name="category_id"/>
-											<field name="tag_ids" widget="many2many_tags"/>
-											<field name="author_id"/>
-											<field name="published"/>
-											<field name="publish_up"/>
-											<field name="publish_down"/>
-										</group>
-									</group>
-								</page>
-								<page string="settings">
-								</page>
-							</notebook>
 						</group>
+					</page>
+					<page string="publishing">
+						<group>
+							<group>
+								<field name="category_id"/>
+								<field name="tag_ids" widget="many2many_tags"/>
+								<field name="author_id"/>
+								<field name="publish_up"/>
+								<field name="publish_down"/>
+							</group>
+						</group>
+					</page>
+					<page string="settings">
+					</page>
+				</notebook>
+			</group>
                         <field name="active" invisible="1"/>
                     </div>
                 </sheet>
