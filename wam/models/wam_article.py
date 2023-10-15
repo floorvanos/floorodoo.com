@@ -22,11 +22,13 @@ class WamArticle(models.Model):
     author_id = fields.Many2one('res.users', string='Author', index=True, default=lambda self: self.env.user)
     category_ids = fields.Many2many('wam.article.category', string='Category', index=True)
     tag_ids = fields.Many2many('wam.article.tag', string='Tags', index=True)
-
+    
+    my_selection_field = fields.Selection([('option1', 'Label 1'), ('option2', 'Label 2')], string='My Selection Field')
+    
     # settings related fields
-    show_title = fields.Boolean("Show title")
-    show_datetime = fields.Boolean("Show datetime")
-    show_author = fields.Boolean("Show Author")
+    show_title = fields.Selection([('-1', 'Inherit'), ('0', 'No'), ('1', 'Yes')], string='Show title')
+    show_datetime = fields.Selection([('-1', 'Inherit'), ('0', 'No'), ('1', 'Yes')], string='Show publishing date time')
+    show_author = fields.Selection([('-1', 'Inherit'), ('0', 'No'), ('1', 'Yes')], string='Show Author')
     
     @api.depends("publish_up", "publish_down")
     def _compute_is_published(self):
