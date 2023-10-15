@@ -26,9 +26,9 @@ class WamArticle(models.Model):
     my_selection_field = fields.Selection([('option1', 'Label 1'), ('option2', 'Label 2')], string='My Selection Field')
     
     # settings related fields
-    show_title = fields.Selection([('-1', 'Inherit'), ('0', 'No'), ('1', 'Yes')], string='Show title')
-    show_datetime = fields.Selection([('-1', 'Inherit'), ('0', 'No'), ('1', 'Yes')], string='Show publishing date time')
-    show_author = fields.Selection([('-1', 'Inherit'), ('0', 'No'), ('1', 'Yes')], string='Show Author')
+    show_title = fields.Selection([('-1', 'Inherit'), ('0', 'No'), ('1', 'Yes')], string='Show title', default='-1')
+    show_datetime = fields.Selection([('-1', 'Inherit'), ('0', 'No'), ('1', 'Yes')], string='Show publishing date time', default='-1')
+    show_author = fields.Selection([('-1', 'Inherit'), ('0', 'No'), ('1', 'Yes')], string='Show Author', default='-1')
     
     @api.depends("publish_up", "publish_down")
     def _compute_is_published(self):
