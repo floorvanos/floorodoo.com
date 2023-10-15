@@ -7,9 +7,9 @@ class WamArticle(models.Model):
     _description = "Article "
     _order = "id"
     
-    name = fields.Char('Article Name', required=True)
-    intro_text = fields.Html('Intro text')
-    main_text = fields.Html('Main text')
+    name = fields.Char('Article Name', required=True, translate=True)
+    intro_text = fields.Html('Intro text', translate=True)
+    main_text = fields.Html('Main text', translate=True)
     publish_up = fields.Datetime('Publish Up')
     publish_down = fields.Datetime('Publish Down')
     published = fields.Boolean('Published', compute="_compute_is_published", store=True)
