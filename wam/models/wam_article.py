@@ -8,14 +8,24 @@ class WamArticle(models.Model):
     _order = "id"
     
     fvo_name = fields.Char('Article Name', required=True)
+    
+    # content related fields
     fvo_intro_text = fields.Html('Intro text')
     fvo_main_text = fields.Html('Main text')
+    
+    # publishing related fields
     publish_up = fields.Datetime('Publish Up')
     publish_down = fields.Datetime('Publish Down')
     published = fields.Boolean('Published', compute="_compute_is_published", store=True)
     author_id = fields.Many2one('res.users', string='Author', index=True, default=lambda self: self.env.user)
     category_ids = fields.Many2many('wam.article.category', string='Category', index=True)
     tag_ids = fields.Many2many('wam.article.tag', string='Tags', index=True)
+
+    # settings related fields
+    show_title = fields.Boolean("Show title")
+    show_datetime = fields.Boolean("Show datetime")
+    show_author = fields.Boolean("Show Author")
+    
     
     active = fields.Boolean('Active', default=True)
     
