@@ -45,7 +45,7 @@
 					<page string="publishing">
 						<group>
 							<group>
-								<field name="category_id"/>
+								<field name="category_id" widget="many2many_tags"/>
 								<field name="tag_ids" widget="many2many_tags"/>
 								<field name="author_id"/>
 								<field name="published"/>
