@@ -9,7 +9,7 @@ class WamArticle(models.Model):
     name = fields.Char('Article Name', required=True, translate=True)
     intro_text = fields.Html('Intro text', translate=True)
     main_text = fields.Html('Main text', translate=True)
-    published = fields.Boolean('Published', compute="_compute_is_published", inverse="_inverse_is_published" store=True)
+    published = fields.Boolean('Published', compute="_compute_is_published", inverse="_inverse_is_published", store=True)
     publish_up = fields.Datetime('Publish Up')
     publish_down = fields.Datetime('Publish Down')
     author_id = fields.Many2one('res.users', string='Author', index=True, tracking=True, default=lambda self: self.env.user)
