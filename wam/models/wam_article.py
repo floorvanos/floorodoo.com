@@ -28,9 +28,6 @@ class WamArticle(models.Model):
     show_datetime = fields.Boolean("Show datetime")
     show_author = fields.Boolean("Show Author")
     
-    
-    
-    
     @api.depends("publish_up", "publish_down")
     def _compute_is_published(self):
         now = datetime.now()
@@ -45,3 +42,11 @@ class WamArticle(models.Model):
         for record in self:
             if record.publish_down and record.publish_down <= record.publish_up:
                 raise ValidationError("Publish down cannot be before publish up ")
+
+    @api.depends("archive")
+    def _compute_is_archived(self):
+        now = datetime.now()
+        for record in self:
+            if record.archive
+                record.active = now < record.archive
+
