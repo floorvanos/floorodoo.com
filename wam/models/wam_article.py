@@ -18,7 +18,7 @@ class WamArticle(models.Model):
     publish_down = fields.Datetime('Publish Down')
     published = fields.Boolean('Published', compute="_compute_is_published", store=True)
     archive = fields.Datetime('Archive')
-    active = fields.Boolean('Active', default=True)
+    active = fields.Boolean('Active', compute="_compute_is_archived", store=True, default=True)
     author_id = fields.Many2one('res.users', string='Author', index=True, default=lambda self: self.env.user)
     category_ids = fields.Many2many('wam.article.category', string='Category', index=True)
     tag_ids = fields.Many2many('wam.article.tag', string='Tags', index=True)
@@ -47,7 +47,7 @@ class WamArticle(models.Model):
                 raise ValidationError("Publish down cannot be before publish up ")
 
     @api.depends('archive')
-    def _compute_is_published(self):
+    def _compute_is_archived(self):
         now = datetime.now()
         for record in self:
             if record.archive
