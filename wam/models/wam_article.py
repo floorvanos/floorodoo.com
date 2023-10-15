@@ -30,5 +30,6 @@ class WamArticle(models.Model):
     def inverse_is_published(self):
         now = fields.Datetime.now()
         for record in self:
-            record.publish_up = now
+            if record.published:
+                record.publish_up = now
         
