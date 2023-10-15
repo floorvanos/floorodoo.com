@@ -9,7 +9,7 @@ class WamArticle(models.Model):
     name = fields.Char('Article Name', required=True, translate=True)
     intro_text = fields.Html('Intro text', translate=True)
     main_text = fields.Html('Main text', translate=True)
-    published = fields.Boolean('Published', compute="_compute_is_published", inverse="_inverse_is_published", store=True)
+    published = fields.Boolean('Published', compute="_compute_is_published", store=True)
     publish_up = fields.Datetime('Publish Up')
     publish_down = fields.Datetime('Publish Down')
     author_id = fields.Many2one('res.users', string='Author', index=True, tracking=True, default=lambda self: self.env.user)
@@ -26,7 +26,4 @@ class WamArticle(models.Model):
                 record.published = record.publish_up <= now < record.publish_down
             elif record.publish_up and not record.publish_down:
                 record.published = record.publish_up <= now
-
-    def _inverse_is_published(self):
-        for record in self:
-                record.publish_up = datetime.now()
+                
