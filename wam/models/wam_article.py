@@ -27,7 +27,9 @@ class WamArticle(models.Model):
             elif record.publish_up and not record.publish_down:
                 record.published = record.publish_up <= now
 
-    def reverse_is_published(self):
+    def _reverse_is_published(self):
         now = fields.Datetime.now()
-        for record in self:
+            for record in self:
+                if record.published:
+                    record.publish_up = now
         
