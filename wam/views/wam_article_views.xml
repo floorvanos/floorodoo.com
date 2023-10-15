@@ -52,14 +52,14 @@
 								<field name="published"/>
 								<field name="publish_up"/>
 								<field name="publish_down"/>
+								<field name="archive"/>
+								<field name="active"/>
 							</group>
 						</group>
 					</page>
 					<page string="settings">
 					</page>
 				</notebook>
-			
-                        <field name="active" invisible="1"/>
                     </div>
                 </sheet>
             </form>
