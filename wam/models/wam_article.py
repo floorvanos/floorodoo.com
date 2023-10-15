@@ -18,3 +18,8 @@ class WamArticle(models.Model):
     
     active = fields.Boolean('Active', default=True)
     
+# @api.depends('date_begin', 'date_end')
+#    def _compute_is_ongoing(self):
+#        now = fields.Datetime.now()
+#        for event in self:
+#            event.is_ongoing = event.date_begin <= now < event.date_end
