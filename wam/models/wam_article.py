@@ -12,7 +12,7 @@ class WamArticle(models.Model):
     main_text = fields.Html('Main text')
     publish_up = fields.Datetime('Publish Up')
     publish_down = fields.Datetime('Publish Down')
-    published = fields.Boolean('Published', compute="_compute_is_published")
+    published = fields.Boolean('Published', compute="_compute_is_published", store=True)
     author_id = fields.Many2one('res.users', string='Author', index=True, default=lambda self: self.env.user)
     category_id = fields.Many2one('wam.article.category', string='Category', index=True)
     tag_ids = fields.Many2many('wam.article.tag', string='Tags', index=True)
