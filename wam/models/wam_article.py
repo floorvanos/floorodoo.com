@@ -22,4 +22,7 @@ class WamArticle(models.Model):
     def _compute_is_published(self):
         now = fields.Datetime.now()
         for record in self:
-            record.published = record.publish_up <= now < record.publish_down
+            if record.publish_up and record.publish_down:
+                record.published = record.publish_up <= now < record.publish_down
+            elif record.publish_up and not record.publish_down:
+                record.published = record.publish_up
