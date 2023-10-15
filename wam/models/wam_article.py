@@ -46,3 +46,9 @@ class WamArticle(models.Model):
             if record.publish_down and record.publish_down <= record.publish_up:
                 raise ValidationError("Publish down cannot be before publish up ")
 
+    @api.depends('archive')
+    def _compute_is_published(self):
+        now = datetime.now()
+        for record in self:
+            if record.archive
+                record.active = record.archive <= now
