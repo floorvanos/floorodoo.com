@@ -58,6 +58,9 @@
 						</group>
 					</page>
 					<page string="settings">
+						<field name="show_title"/>
+						<field name="show_datetime"/>
+						<field name="show_author"/>
 					</page>
 				</notebook>
                     </div>
