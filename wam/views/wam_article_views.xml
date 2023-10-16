@@ -25,8 +25,8 @@
         <field name="arch" type="xml">
             <form string="Article">
 				<header>
-        			<button name="action_publish_up" type="object" string="Publish"/>
-			    	<button name="action_publish_down" type="object" string="Unpublish"/>
+        			<button name="action_publish_up" type="object" string="Publish" attrs="{'invisible': [('published', '=', True)]}"/>
+			    	<button name="action_publish_down" type="object" string="Unpublish" attrs="{'invisible': [('published', '=', False)]}"/>
     			</header>
                 <sheet>
                     <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
