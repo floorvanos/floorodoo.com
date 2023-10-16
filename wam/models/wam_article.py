@@ -52,3 +52,12 @@ class WamArticle(models.Model):
             if record.archive:
                 record.active = now < record.archive
 
+    def action_publish_up(self):
+        for record in self:
+            record.publish_up = datetime.now()
+        return True
+
+    def action_publish_down(self):
+        for record in self:
+            record.publish_up = ''
+        return True
