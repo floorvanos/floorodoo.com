@@ -16,7 +16,6 @@ class WamArticle(models.Model):
     # publishing related fields
     publish_up = fields.Datetime('Publish Up')
     publish_down = fields.Datetime('Publish Down')
-    published = fields.Boolean('Published', compute="_compute_is_published", store=True)
     archive = fields.Datetime('Archive')
     active = fields.Boolean('Active', compute="_compute_is_archived", store=True)
     author_id = fields.Many2one('res.users', string='Author', index=True, default=lambda self: self.env.user)
@@ -29,15 +28,6 @@ class WamArticle(models.Model):
     show_title = fields.Selection([('-1', 'Inherit'), ('0', 'No'), ('1', 'Yes')], string='Show title', default='-1')
     show_datetime = fields.Selection([('-1', 'Inherit'), ('0', 'No'), ('1', 'Yes')], string='Show publishing date time', default='-1')
     show_author = fields.Selection([('-1', 'Inherit'), ('0', 'No'), ('1', 'Yes')], string='Show Author', default='-1')
-    
-    @api.depends("publish_up", "publish_down")
-    def _compute_is_published(self):
-        now = datetime.now()
-        for record in self:
-            if record.publish_up and record.publish_down:
-                record.published = record.publish_up <= now < record.publish_down
-            elif record.publish_up and not record.publish_down:
-                record.published = record.publish_up <= now
     
     @api.constrains('publish_down')
     def check_publish_down(self):
