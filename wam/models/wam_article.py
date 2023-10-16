@@ -55,9 +55,12 @@ class WamArticle(models.Model):
     def action_publish_up(self):
         for record in self:
             record.publish_up = datetime.now()
+            record.published = True
         return True
 
     def action_publish_down(self):
         for record in self:
             record.publish_up = ''
+            record.publish_down = ''
+            record.published = False
         return True
