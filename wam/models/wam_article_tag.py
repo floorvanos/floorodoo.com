@@ -11,9 +11,3 @@ class WamArticleTag(models.Model):
     publish_down = fields.Datetime('Publish Down')
     
     active = fields.Boolean('Active', default=True)
-
-class WamArticleTagItems(models.Model):
-    _name = "wam.article.tag.items"
-    _description = "Article Tag Items"
-    _order = "name"
-    
