@@ -31,15 +31,6 @@
                         <h1 class="mb32">
                             <field name="name" class="mb16"/>
                         </h1>
-                        <group>
-                            <field name="article_ids">
-                                <tree string="Articles" editable="bottom">
-                                    <field name="published"/>
-                                    <field name="name"/>
-                                    <field name="category_ids" widget="many2many_tags"/>
-                                </tree>
-                            </field>
-                        </group>
                         <field name="active" invisible="1"/>
                     </div>
                 </sheet>
