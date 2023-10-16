@@ -13,8 +13,8 @@
             <tree string="Articles">
                 <field name="published"/>
                 <field name="fvo_name"/>
-		<field name="category_ids" widget="many2many_tags"/>
-		<field name="tag_ids" widget="many2many_tags"/>
+				<field name="category_ids" widget="many2many_tags"/>
+				<field name="tag_ids" widget="many2many_tags"/>
             </tree>
         </field>
     </record>
@@ -24,6 +24,10 @@
         <field name="model">wam.article</field>
         <field name="arch" type="xml">
             <form string="Article">
+				<header>
+        			<button name="action_publish" type="object" string="Publish"/>
+			    	<button name="action_unpublish" type="object" string="Unpublish"/>
+    			</header>
                 <sheet>
                     <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
                     <div class="oe_title">
