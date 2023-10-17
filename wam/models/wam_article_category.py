@@ -10,14 +10,4 @@ class WamArticleCategory(models.Model):
     publish_up = fields.Datetime('Publish Up')
     publish_down = fields.Datetime('Publish Down')
     active = fields.Boolean('Active', default=True)
-
-    line_ids = fields.One2many("wam_article_category_line", "model_id")
-
-class WamArticleCategoryLine(models.model):
-    _name = "wam_article_category_line"
-    _description = "Article Category Line"
-
-    model_id = fields.Many2one("wam_article_category")
-    
-    
     
