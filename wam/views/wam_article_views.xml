@@ -6,7 +6,7 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <record id="article_view_tree" model="ir.ui.view">
+    <record id="wam_article_view_tree" model="ir.ui.view">
         <field name="name">wam.article.tree</field>
         <field name="model">wam.article</field>
         <field name="arch" type="xml">
@@ -19,7 +19,7 @@
         </field>
     </record>
 
-    <record id="article_view_form" model="ir.ui.view">
+    <record id="wam_article_view_form" model="ir.ui.view">
         <field name="name">Article details</field>
         <field name="model">wam.article</field>
         <field name="arch" type="xml">
@@ -77,7 +77,7 @@
         </field>
     </record>
 	
-	<record id="article_view_filter" model="ir.ui.view">
+	<record id="wam_article_view_filter" model="ir.ui.view">
             <field name="name">wam.article.select</field>
             <field name="model">wam.article</field>
             <field name="arch" type="xml">
