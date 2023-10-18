@@ -78,8 +78,8 @@
             </field>
         </record>
         <!-- MENU -->
-        <record id="menu_wam_article_tag_category" model="ir.ui.menu">
+   <!--     <record id="menu_wam_article_tag_category" model="ir.ui.menu">
             <field name="action" ref="wam.article.wam_article_tag_category_action_tree"/>
-        </record>
+        </record> -->
     </data>
 </odoo>
