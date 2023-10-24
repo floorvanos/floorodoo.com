@@ -19,7 +19,7 @@ class WamArticleLine(model.Model):
     _oder = "name"
 
     name = fields.Char("Name", required=True, translate=True)
-    published = fields.Boolean('Published', store=True)
-    author_id = fields.Many2one('res.users', string='Author', index=True, default=lambda self: self.env.user)
+    published = fields.Boolean('Published', store=True, index=True)
+    author_id = fields.Many2one('res.users', string='Author', index=True)
     category_id = fields.Many2one('wam.article.category', string='Category', index=True)
     tag_ids = fields.Many2many('wam.article.tag', string='Tags', index=True)
