@@ -33,9 +33,9 @@
                         </h1>
                         <field name="active" invisible="1"/>
                         <group>
-                            <field name="article_ids" context="{'default_article_ids': active_id}">
+                            <field name="article_ids" context="{'default_category_id': active_id}">
                                 <tree string="Articles" editable="bottom">
-                                    <field name="published" widget="handle"/>
+                                    <field name="published"/>
                                     <field name="name"/>
                                     <field name="author"/>
                                 </tree>
