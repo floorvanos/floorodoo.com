@@ -32,15 +32,7 @@
                             <field name="name" class="mb16"/>
                         </h1>
                         <field name="active" invisible="1"/>
-                        <group>
-                            <field name="article_ids" context="{'default_category_id': active_id}">
-                                <tree string="Articles" editable="bottom">
-                                    <field name="published"/>
-                                    <field name="name"/>
-                                    <field name="author"/>
-                                </tree>
-                            </field>
-                        </group>
+                       
                     </div>
                 </sheet>
             </form>
