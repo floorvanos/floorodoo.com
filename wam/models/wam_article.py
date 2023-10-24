@@ -20,10 +20,8 @@ class WamArticle(models.Model):
     archive = fields.Datetime('Archive')
     active = fields.Boolean('Active', compute="_compute_is_archived", store=True)
     author_id = fields.Many2one('res.users', string='Author', index=True, default=lambda self: self.env.user)
-    category_ids = fields.Many2many('wam.article.category', string='Category', index=True)
+    category_id = fields.Many2one('wam.article.category', string='Category', index=True)
     tag_ids = fields.Many2many('wam.article.tag', string='Tags', index=True)
-    
-    my_selection_field = fields.Selection([('option1', 'Label 1'), ('option2', 'Label 2')], string='My Selection Field')
     
     # settings related fields
     show_title = fields.Selection([('-1', 'Inherit'), ('0', 'No'), ('1', 'Yes')], string='Show title', default='-1')
