@@ -2,15 +2,15 @@
 
 ### velden
 name\
-introtext
-bodytext
-author
-type
-category
-tag
-publishup
-publishdown
-state
+introtext\
+bodytext\
+author\
+type\
+category\
+tag\
+publishup\
+publishdown\
+state\
 
 ###acties
 
@@ -21,9 +21,9 @@ state
 
 ### vragen
 
-state
-web preview
-alias
+state\
+web preview\
+alias\
 
 
 
