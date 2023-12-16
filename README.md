@@ -13,14 +13,7 @@ publishdown\
 state\
 
 ###acties
-
-
-
-
-
-
 ### vragen
-
 state\
 web preview\
 alias\
