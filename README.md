@@ -1,31 +1,29 @@
 # odoo
 
-# velden
-# --------------
-# name
-# introtext
-# bodytext
-# author
-# type
-# category
-# tag
-# publishup
-# publishdown
-# state
+### velden
+name
+introtext
+bodytext
+author
+type
+category
+tag
+publishup
+publishdown
+state
 
-# acties
-# --------------
+###acties
 
 
 
 
 
-# vragen
-# --------------
-# state
-# web preview
-# alias
 
-# --------------
-# --------------
+### vragen
+
+state
+web preview
+alias
+
+
 
