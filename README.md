@@ -10,13 +10,13 @@ category\
 tag\
 publishup\
 publishdown\
-state\
+state
 
 ### acties
 ### vragen
 state\
 web preview\
-alias\
+alias
 
 
 
