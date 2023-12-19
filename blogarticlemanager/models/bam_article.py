@@ -10,9 +10,9 @@ class Article(models.Model):
     _order = "sequence"
 
     name = fields.Char('Article Name', required=True, translate=True)
-    author_id = fields.Many2one('res.users', string='Author', default=lambda self: self.env.user)
-    # type = fields.Onetomany('bam.article.type', string="Type")
-    # category = fields.Onetomany('bam.article.category', string="Category")
+    # author_id = fields.One2many('res.users', string='Author', default=lambda self: self.env.user)
+    # type = fields.One2many('bam.article.type', string="Type")
+    # category = fields.One2many('bam.article.category', string="Category")
     # tag_ids = fields.Many2many('bam.article.tag', string="Tags")
     introtext = fields.Html('Intro Text')
     bodytext = fields.Html('Body Text')
