@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<odoo>
+	<record id="bam_article_action" model="ir.actions.act_window">
+		<field name="name">Articles</field>
+		<field name="res_model">bam.article</field>
+		<field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+			<p class="o_view_nocontent_smiling_face">
+				Write a new article
+            </p>
+        </field>
+    </record>
+</odoo>
