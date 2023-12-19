@@ -10,4 +10,7 @@
             </p>
         </field>
     </record>
+	<record id="menu_bam_article" model="ir.ui.menu">
+        <field name="action" ref="bam.bam_article_action"/>
+    </record>
 </odoo>
