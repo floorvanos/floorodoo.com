@@ -14,7 +14,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/bam_article_views.xml',
-        'views/bam_menu_views.xml',
+        'views/bam_menus.xml',
     ],
     'installable': True,
     'application': True
