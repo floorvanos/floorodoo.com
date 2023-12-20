@@ -25,6 +25,6 @@ class Article(models.Model):
         ('published', 'Published'),
         ('archived', 'Archived'),
         ('trashed', 'Trashed'),
-        ], required=True, default='draft'),
+        ], string='State', required=True, default='draft'),
     active = fields.Boolean('Active', default=True)
     sequence = fields.Integer('Sequence', default=10)
