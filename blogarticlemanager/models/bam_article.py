@@ -19,6 +19,10 @@ class Article(models.Model):
     publish_up = fields.Datetime('Publish')
     archive = fields.Datetime('Archive')
     trash = fields.Datetime('Trash')
+    type = fields.Selection([
+        ('article', 'Article'),
+        ('vacancy', 'Vacancy'),
+        ], string='Type', required=True, default='article'),
     state = fields.Selection([
         ('draft', 'Draft'),
         ('queued', 'Queued'),
@@ -26,5 +30,6 @@ class Article(models.Model):
         ('archived', 'Archived'),
         ('trashed', 'Trashed'),
         ], string='State', required=True, default='draft'),
+    
     active = fields.Boolean('Active', default=True)
     sequence = fields.Integer('Sequence', default=10)
