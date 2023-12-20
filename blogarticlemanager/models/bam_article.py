@@ -9,6 +9,8 @@ class Article(models.Model):
     _description = "BAM Article"
     _order = "sequence"
 
+    #article fields
+    
     name = fields.Char('Article Name', required=True)
     # author_id = fields.One2many('res.users', string='Author', default=lambda self: self.env.user)
     # type = fields.One2many('bam.article.type', string="Type")
@@ -16,6 +18,9 @@ class Article(models.Model):
     # tag_ids = fields.Many2many('bam.article.tag', string="Tags")
     introtext = fields.Html('Intro Text')
     bodytext = fields.Html('Body Text')
+    
+    # article publishing fields
+    
     publish_up = fields.Datetime('Publish')
     archive = fields.Datetime('Archive')
     trash = fields.Datetime('Trash')
@@ -33,3 +38,11 @@ class Article(models.Model):
     
     active = fields.Boolean('Active', default=True)
     sequence = fields.Integer('Sequence', default=10)
+    
+    # article preference fields
+    
+    show_title = fields.Boolean('Show title', default=True)
+    show_date = fields.Boolean('Show date', default=True)
+    show_author = fields.Boolean('Show author', default=True)
+    show_introtext = fields.Boolean('Show introtext', default=False)
+    
