@@ -21,7 +21,6 @@ class Article(models.Model):
     trash = fields.Datetime('Trash')
     state = fields.Selection(
         string='State',
-        selection=[('draft', 'Draft'), ('queued', 'Queued'), ('published', 'Published'), ('archived', 'Archived'), ('trashed', 'Trashed')],
-        default='draft'),
+        selection=[('draft', 'Draft'), ('queued', 'Queued'), ('published', 'Published'), ('archived', 'Archived'), ('trashed', 'Trashed')]),
     active = fields.Boolean('Active', default=True)
     sequence = fields.Integer('Sequence', default=10)
