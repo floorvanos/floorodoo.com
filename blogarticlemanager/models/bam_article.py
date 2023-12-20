@@ -22,14 +22,14 @@ class Article(models.Model):
     type = fields.Selection([
         ('article', 'Article'),
         ('vacancy', 'Vacancy'),
-        ], string='Type', required=True, default='article'),
+        ], string='Type', required=True, default='article')
     state = fields.Selection([
         ('draft', 'Draft'),
         ('queued', 'Queued'),
         ('published', 'Published'),
         ('archived', 'Archived'),
         ('trashed', 'Trashed'),
-        ], string='State', required=True, default='draft'),
+        ], string='State', required=True, default='draft')
     
     active = fields.Boolean('Active', default=True)
     sequence = fields.Integer('Sequence', default=10)
