@@ -9,7 +9,7 @@ class Article(models.Model):
     _description = "BAM Article"
     _order = "sequence"
 
-    name = fields.Char('Article Name', required=True, translate=True)
+    name = fields.Char('Article Name', required=True)
     # author_id = fields.One2many('res.users', string='Author', default=lambda self: self.env.user)
     # type = fields.One2many('bam.article.type', string="Type")
     # category = fields.One2many('bam.article.category', string="Category")
@@ -19,10 +19,9 @@ class Article(models.Model):
     publish_up = fields.Datetime('Publish')
     archive = fields.Datetime('Archive')
     trash = fields.Datetime('Trash')
-    # state = fields.Selection(
-    #    string='State',
-    #    selection=[('draft', 'Draft'), ('queued', 'Queued'), ('published', 'Published'), ('archived', 'Archived'), ('trashed', 'Trashed')])
-   
-
+    state = fields.Selection(
+        string='State',
+        selection=[('draft', 'Draft'), ('queued', 'Queued'), ('published', 'Published'), ('archived', 'Archived'), ('trashed', 'Trashed')],
+        default='draft'),
     active = fields.Boolean('Active', default=True)
     sequence = fields.Integer('Sequence', default=10)
