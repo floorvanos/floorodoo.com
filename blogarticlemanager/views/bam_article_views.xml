@@ -77,7 +77,7 @@
 			<search>
 				<field name="name" string="Title"/>
 				<field name="introtext" string="Contents" filter_domain="['|', ('introtext','ilike',self), ('bodytext','ilike',self)]"/>
-				<field name="publish_up" string="Publicatiedatum" filter_domain="[('publish_up','ilike',self))]"/>
+				<field name="publish_up" string="Publicatiedatum"/>
 				<separator/>
 				
 				<separator/>
