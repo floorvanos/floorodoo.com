@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<odoo>
+	<record id="bam_article_category_action" model="ir.actions.act_window">
+		<field name="name">Article Categories</field>
+		<field name="res_model">bam.article.category</field>
+		<field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+			<p class="o_view_nocontent_smiling_face">
+				Write a new article category
+            </p>
+        </field>
+    </record>
+	
+	
+	 <record id="bam_article_category_view_tree" model="ir.ui.view">
+        <field name="name">bam.article.category.tree</field>
+        <field name="model">bam.article.category</field>
+        <field name="arch" type="xml">
+            <tree string="Article Categories">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+	
+	<record id="bam_article_category_view_form" model="ir.ui.view">
+		<field name="name">bam.article.category.form</field>
+		<field name="model">bam.article.category</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+						<group>
+							<field name="name"/>
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+</odoo>
