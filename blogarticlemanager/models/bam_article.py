@@ -24,7 +24,7 @@ class Article(models.Model):
     publish_up = fields.Datetime('Publish')
     archive = fields.Datetime('Archive')
     trash = fields.Datetime('Trash')
-    type = fields.many2one("bam.article.type", string="Article Type")
+    type = fields.Many2one("bam.article.type", string="Article Type")
     state = fields.Selection([
         ('draft', 'Draft'),
         ('queued', 'Queued'),
