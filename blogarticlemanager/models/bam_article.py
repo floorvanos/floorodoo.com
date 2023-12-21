@@ -17,7 +17,7 @@ class Article(models.Model):
     # tag_ids = fields.Many2many('bam.article.tag', string="Tags")
     introtext = fields.Html('Intro Text')
     bodytext = fields.Html('Body Text')
-    author_id = fields.Many2one("res.partner", string="Author", default=lambda self: self.env.user)
+    author_id = fields.Many2one("res.users", string="Author", default=lambda self: self.env.user)
     
     # article publishing fields
     
