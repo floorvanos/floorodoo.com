@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_bam_article,access_bam_article,model_bam_article,base.group_user,1,1,1,1
 access_bam_article_type,access_bam_article_type,model_bam_article_type,base.group_user,1,1,1,1
 access_bam_article_tag,access_bam_article_tag,model_bam_article_tag,base.group_user,1,1,1,1
+access_bam_article_tag_category,access_bam_article_tag_category,model_bam_article_tag_category,base.group_user,1,1,1,1
