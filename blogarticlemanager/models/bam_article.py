@@ -14,7 +14,7 @@ class Article(models.Model):
     name = fields.Char('Article Name', required=True)
     # type = fields.One2many('bam.article.type', string="Type")
     # category = fields.One2many('bam.article.category', string="Category")
-    # tag_ids = fields.Many2many('bam.article.tag', string="Tags")
+    
     introtext = fields.Html('Intro Text')
     bodytext = fields.Html('Body Text')
     author_id = fields.Many2one("res.users", string="Author", default=lambda self: self.env.user)
@@ -25,6 +25,7 @@ class Article(models.Model):
     archive = fields.Datetime('Archive')
     trash = fields.Datetime('Trash')
     type_id = fields.Many2one("bam.article.type", string="Article Type")
+    tag_ids = fields.Many2many('bam.article.tag', string="Tags")
     state = fields.Selection([
         ('draft', 'Draft'),
         ('queued', 'Queued'),
