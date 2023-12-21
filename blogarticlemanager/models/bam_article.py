@@ -43,6 +43,6 @@ class Article(models.Model):
     
     show_title = fields.Boolean('Show title', default=True)
     show_date = fields.Boolean('Show date', default=True)
-    show_author = fields.Boolean('Show author', default=True)
+    show_author_id = fields.Boolean('Show author', default=True)
     show_introtext = fields.Boolean('Show introtext', default=False)
     
