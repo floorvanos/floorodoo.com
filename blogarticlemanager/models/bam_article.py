@@ -12,12 +12,12 @@ class Article(models.Model):
     #article fields
     
     name = fields.Char('Article Name', required=True)
-    # author_id = fields.One2many('res.users', string='Author', default=lambda self: self.env.user)
     # type = fields.One2many('bam.article.type', string="Type")
     # category = fields.One2many('bam.article.category', string="Category")
     # tag_ids = fields.Many2many('bam.article.tag', string="Tags")
     introtext = fields.Html('Intro Text')
     bodytext = fields.Html('Body Text')
+    author_id = fields.Many2one("res.partner", string="Author", default=lambda self: self.env.user)
     
     # article publishing fields
     
