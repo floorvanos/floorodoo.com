@@ -38,7 +38,7 @@
         </record>
 
         <record id="bam_article_tag_category_action_tree" model="ir.actions.act_window" >
-            <field name="name">Article Tags Categories</field>
+            <field name="name">Article Tag Categories</field>
             <field name="res_model">bam.article.tag.category</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
