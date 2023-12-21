@@ -19,7 +19,7 @@
             <tree string="Articles">
                 <field name="name"/>
 				<field name="type"/>
-				<field name="author"/>
+				<field name="author_id"/>
 				<field name="state"/>
 				<field name="publish_up"/>
             </tree>
@@ -41,7 +41,7 @@
 					<group>
 						<group>
 							<field name="name"/>
-							<field name="author"/>
+							<field name="author_id"/>
 							<field name="introtext"/>
 							<field name="bodytext"/>
 						</group>
@@ -62,7 +62,7 @@
 							<group>
 								<field name="show_title"/>
 								<field name="show_date"/>
-								<field name="show_author"/>
+								<field name="show_author_id"/>
 								<field name="show_introtext"/>
 							</group>
 						</page>
@@ -79,8 +79,8 @@
 			<search>
 				<field name="name" string="Title"/>
 				<field name="introtext" string="Contents" filter_domain="['|', ('introtext','ilike',self), ('bodytext','ilike',self)]"/>
-				<field name="type" string="type"/>
-				<field name="author" string="author"/>
+				<field name="type" string="Type"/>
+				<field name="author_id" string="Author"/>
 				<field name="publish_up" string="Publicatiedatum"/>
 				<separator/>
 				
@@ -89,7 +89,7 @@
 				<group expand="1" string="Group By">
                         <filter string="State" name="state" domain="[]" context="{'group_by': 'state'}"/>
 						<filter string="Type" name="type" domain="[]" context="{'group_by': 'type'}"/>
-						<filter string="Author" name="author" domain="[]" context="{'group_by': 'author'}"/>
+						<filter string="Author" name="author_d" domain="[]" context="{'group_by': 'author_id'}"/>
                 </group>
 			</search>
 		</field>
