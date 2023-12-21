@@ -22,7 +22,8 @@
 				<field name="author_id"/>
 				<field name="state"/>
 				<field name="publish_up"/>
-				<field name="tag_ids"/>
+				<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+				<field name="sequence" widget="handle"/>
             </tree>
         </field>
     </record>
@@ -47,17 +48,21 @@
 						</group>
 					</group>
 					<notebook>
-						<page string="Publishing">
+						<page string="properties">
 							<group>
+								<field name="category_id"/>
 								<field name="author_id"/>
 								<field name="type_id"/>
-								<field name="tag_ids"/>
+								<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
+							</group>
+						<page string="Publishing">
+							<group>
 								<field name="publish_up"/>
 								<field name="archive"/>
 								<field name="trash"/>
 								<field name="state"/>
 								<field name="active"/>
-								<field name="sequence"/>
+								<field name="sequence" widget="handle"/>
 							</group>
 						</page>
 						<page string="Preferences">
