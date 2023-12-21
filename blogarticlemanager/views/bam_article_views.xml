@@ -55,6 +55,7 @@
 								<field name="type_id"/>
 								<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
 							</group>
+						</page>
 						<page string="Publishing">
 							<group>
 								<field name="publish_up"/>
