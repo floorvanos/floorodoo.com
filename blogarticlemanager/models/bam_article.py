@@ -24,8 +24,9 @@ class Article(models.Model):
     publish_up = fields.Datetime('Publish')
     archive = fields.Datetime('Archive')
     trash = fields.Datetime('Trash')
+    category_id = fields.Many2one("bam.article.category", string="Article Category")
     type_id = fields.Many2one("bam.article.type", string="Article Type")
-    tag_ids = fields.Many2many('bam.article.tag', string="Tags")
+    tag_ids = fields.Many2many('bam.article.tag', string="Article Tags")
     state = fields.Selection([
         ('draft', 'Draft'),
         ('queued', 'Queued'),
