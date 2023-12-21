@@ -53,7 +53,7 @@
 								<field name="category_id"/>
 								<field name="author_id"/>
 								<field name="type_id"/>
-								<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
+								<field name="tag_ids"/>
 							</group>
 						</page>
 						<page string="Publishing">
