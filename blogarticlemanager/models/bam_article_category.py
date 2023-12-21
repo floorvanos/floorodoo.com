@@ -12,3 +12,4 @@ class ArticleCategory(models.Model):
     #article category fields
     
     name = fields.Char('Article Category Name', required=True)
+    sequence = fields.Integer('Sequence', default=0)
