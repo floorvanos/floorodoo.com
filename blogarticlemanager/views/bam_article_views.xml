@@ -19,6 +19,7 @@
             <tree string="Articles">
                 <field name="name"/>
 				<field name="type_id"/>
+				<field name="category_id"/>
 				<field name="author_id"/>
 				<field name="state"/>
 				<field name="publish_up"/>
