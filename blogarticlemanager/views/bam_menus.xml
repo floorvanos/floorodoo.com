@@ -13,6 +13,7 @@
     <menuitem id="bam_menu_root" name="BAM">
 		<menuitem id="bam_article_menu" name="Articles">
 			<menuitem id="bam_article_menu_action" action="bam_article_action"/>
+			<menuitem id="bam_article_category_menu" action="bam_article_tag_category_action"/>
 			<menuitem id="bam_article_tag_menu" action="bam_article_tag_category_action_tree"/>
 		</menuitem>
 	</menuitem>
