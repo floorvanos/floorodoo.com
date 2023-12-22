@@ -79,6 +79,19 @@
                 </form>
             </field>
         </record>
+		
+		 <record id="bam_article_tag_action_tree" model="ir.actions.act_window" >
+            <field name="name">Article Tags</field>
+            <field name="res_model">bam.article.tag</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create an Article Tag
+                </p><p>
+                    Use Article Tag to classify and organize your article tags.
+                </p>
+            </field>
+        </record>
 
         <!-- <record id="menu_event_category" model="ir.ui.menu">
             <field name="action" ref="event.event_tag_category_action_tree"/>
