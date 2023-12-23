@@ -60,10 +60,10 @@
 						<page string="Media"/>
 							<group>
 								<group>
-									<field name="image"/>
+								
 								</group>
 								<group>
-									<field name="document_ids"/>
+									
 								</group>
 							</group>
 						</page>
