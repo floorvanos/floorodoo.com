@@ -7,7 +7,7 @@ from odoo import fields, models
 class Article(models.Model):
     _name = "bam.article"
     _description = "BAM Article"
-    _order = "sequence"
+    _order = "publish_up, name"
 
     #article fields
     

@@ -51,7 +51,7 @@
 					<notebook>
 						<page string="properties">
 							<group>
-								<field name="category_id" options="{'hide_model': True, 'no_quick_create': True}"/>
+								<field name="category_id" options="{'no_quick_create': True}"/>
 								<field name="author_id"/>
 								<field name="type_id"/>
 								<field name="tag_ids"/>
@@ -79,7 +79,7 @@
 						</page>
 						<page string="vacancy">
 							<group>
-								<field name="partner_id"/>
+								<field name="partner_id" options="{'no_quick_create': True}"/>
 							</group>
 						</page>
 						<page string="Preferences">
