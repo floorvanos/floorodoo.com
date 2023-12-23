@@ -48,10 +48,11 @@
 							<field name="bodytext"/>
 						</group>
 						<group>
+						<group>
 							<notebook>
 						<page string="properties">
 							<group>
-								<field name="category_id"/>
+								<field name="category_id" options="{'no_quick_create': True}"/>
 								<field name="author_id"/>
 								<field name="type_id"/>
 								<field name="tag_ids"/>
@@ -76,6 +77,7 @@
 							</group>
 						</page>
 					</notebook>
+					</group>
 						</group>
 					</group>
 					
