@@ -51,7 +51,7 @@
 					<notebook>
 						<page string="properties">
 							<group>
-								<field name="category_id" options="{'no_quick_create': True}"/>
+								<field name="category_id"/>
 								<field name="author_id"/>
 								<field name="type_id"/>
 								<field name="tag_ids"/>
