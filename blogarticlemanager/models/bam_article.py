@@ -42,8 +42,8 @@ class Article(models.Model):
     
     #article media fields
     
-    image = fields.image("Article Image")
-    document_ids = fields.Many2many("documents", string="Attached Documents")
+    # image = fields.image("Article Image")
+    # document_ids = fields.Many2many("documents", string="Attached Documents")
     
     # extra vacancy fields
     
