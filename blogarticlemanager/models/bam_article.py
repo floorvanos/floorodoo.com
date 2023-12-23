@@ -43,8 +43,8 @@ class Article(models.Model):
     #article media fields
     
     image_1920 = fields.Image("Image", max_width=1920, max_height=1920)
-    # document_ids = fields.Many2many("documents", string="Attached Documents")
-    
+    # document_ids = 
+    fields.Many2many("document", string="Attached Documents")
     # extra vacancy fields
     
     partner_id = fields.Many2one("res.partner", string="Provider")
