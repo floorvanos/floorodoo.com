@@ -60,7 +60,7 @@
 						<page string="Media">
 							<group>
 								<group>
-								
+									<field name="image_1920"/>
 								</group>
 								<group>
 									
