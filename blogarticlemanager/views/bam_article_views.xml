@@ -44,8 +44,8 @@
 					<group>
 						<group>
 						<div class="oe_title">
-                        <label class="oe_edit_only" for="name" string="Product Name"/>
-                        <h1><field name="name" placeholder="Article Name"/></h1>
+                        <label class="oe_edit_only" for="name" string="Article Name"/>
+                        <h1><field name="name" placeholder="Type a name here"/></h1>
 						</div>
 							<field name="introtext"/>
 							<field name="bodytext"/>
