@@ -57,6 +57,16 @@
 								<field name="tag_ids"/>
 							</group>
 						</page>
+						<page string="Media"/>
+							<group>
+								<group>
+									<field name="image"/>
+								</group>
+								<group>
+									<field name="document_ids"/>
+								</group>
+							</group>
+						</page>
 						<page string="Publishing">
 							<group>
 								<field name="publish_up"/>
@@ -65,6 +75,11 @@
 								<field name="state"/>
 								<field name="active"/>
 								<field name="sequence" widget="handle"/>
+							</group>
+						</page>
+						<page string="vacancy">
+							<group>
+								<field name="partner_id"/>
 							</group>
 						</page>
 						<page string="Preferences">

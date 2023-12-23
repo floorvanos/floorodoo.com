@@ -24,6 +24,11 @@ class Article(models.Model):
     publish_up = fields.Datetime('Publish')
     archive = fields.Datetime('Archive')
     trash = fields.Datetime('Trash')
+    active = fields.Boolean('Active', default=True)
+    sequence = fields.Integer('Sequence', default=10)
+    
+    #article property fields
+    
     category_id = fields.Many2one("bam.article.category", string="Article Category")
     type_id = fields.Many2one("bam.article.type", string="Article Type")
     tag_ids = fields.Many2many('bam.article.tag', string="Article Tags")
@@ -35,8 +40,14 @@ class Article(models.Model):
         ('trashed', 'Trashed'),
         ], string='State', required=True, default='draft')
     
-    active = fields.Boolean('Active', default=True)
-    sequence = fields.Integer('Sequence', default=10)
+    #article media fields
+    
+    image = fields.image("Article Image")
+    document_ids = fields.Many2many("documents", string="Attached Documents")
+    
+    # extra vacancy fields
+    
+    partner_id = fields.Many2one("res.partner", string="Vacancy Provider")
     
     # article preference fields
     
