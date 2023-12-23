@@ -11,7 +11,7 @@ class Article(models.Model):
 
     #article fields
     
-    name = fields.Char('Article Name', required=True)
+    name = fields.Char('Title', required=True)
     # type = fields.One2many('bam.article.type', string="Type")
     # category = fields.One2many('bam.article.category', string="Category")
     
@@ -29,9 +29,9 @@ class Article(models.Model):
     
     #article property fields
     
-    category_id = fields.Many2one("bam.article.category", string="Article Category")
-    type_id = fields.Many2one("bam.article.type", string="Article Type")
-    tag_ids = fields.Many2many('bam.article.tag', string="Article Tags")
+    category_id = fields.Many2one("bam.article.category", string="Category")
+    type_id = fields.Many2one("bam.article.type", string="Type")
+    tag_ids = fields.Many2many('bam.article.tag', string="Tags")
     state = fields.Selection([
         ('draft', 'Draft'),
         ('queued', 'Queued'),
@@ -47,7 +47,7 @@ class Article(models.Model):
     
     # extra vacancy fields
     
-    partner_id = fields.Many2one("res.partner", string="Vacancy Provider")
+    partner_id = fields.Many2one("res.partner", string="Provider")
     
     # article preference fields
     
