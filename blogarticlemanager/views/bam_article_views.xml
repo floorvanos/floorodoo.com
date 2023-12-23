@@ -113,6 +113,7 @@
                 <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
 				<group expand="1" string="Group By">
                         <filter string="State" name="state" domain="[]" context="{'group_by': 'state'}"/>
+						<filter string="Category" name="category_id" domain="[]" context="{'group_by': 'category_id'}"/>
 						<filter string="Type" name="type_id" domain="[]" context="{'group_by': 'type_id'}"/>
 						<filter string="Tag" name="tag_ids" domain="[]" context="{'group_by': 'tag_ids'}"/>
 						<filter string="Author" name="author_d" domain="[]" context="{'group_by': 'author_id'}"/>
