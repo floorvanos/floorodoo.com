@@ -41,14 +41,14 @@
 					<div class="oe_button_box">
 						<BUTTONS/>
 					</div>
-					<group>
-						<group>
-							<field name="name"/>
-							<field name="introtext"/>
-							<field name="bodytext"/>
-						</group>
-					</group>
 					<notebook>
+						<page string="Content">
+							<group>
+								<field name="name"/>
+								<field name="introtext"/>
+								<field name="bodytext"/>
+							</group>
+						</page>
 						<page string="properties">
 							<group>
 								<field name="category_id" options="{'no_quick_create': True}"/>
