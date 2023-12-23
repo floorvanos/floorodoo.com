@@ -5,4 +5,3 @@ from . import bam_article
 from . import bam_article_type
 from . import bam_article_category
 from . import bam_article_tag
-from . import document
