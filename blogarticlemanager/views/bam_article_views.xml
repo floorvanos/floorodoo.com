@@ -49,12 +49,16 @@
 								<field name="bodytext"/>
 							</group>
 						</page>
-						<page string="properties">
+						<page string="Properties">
 							<group>
 								<field name="category_id" options="{'no_quick_create': True}"/>
 								<field name="author_id"/>
 								<field name="type_id"/>
 								<field name="tag_ids"/>
+								<field name="show_title"/>
+								<field name="show_date"/>
+								<field name="show_author_id"/>
+								<field name="show_introtext"/>
 							</group>
 						</page>
 						<page string="Media">
@@ -77,17 +81,9 @@
 								<field name="sequence" widget="handle"/>
 							</group>
 						</page>
-						<page string="vacancy">
+						<page string="Vacancy">
 							<group>
 								<field name="partner_id" options="{'no_quick_create': True}"/>
-							</group>
-						</page>
-						<page string="Preferences">
-							<group>
-								<field name="show_title"/>
-								<field name="show_date"/>
-								<field name="show_author_id"/>
-								<field name="show_introtext"/>
 							</group>
 						</page>
 					</notebook>
