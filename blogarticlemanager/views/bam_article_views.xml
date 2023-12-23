@@ -47,8 +47,8 @@
 							<field name="introtext"/>
 							<field name="bodytext"/>
 						</group>
-					</group>
-					<notebook>
+						<group>
+							<notebook>
 						<page string="properties">
 							<group>
 								<field name="category_id"/>
@@ -76,6 +76,9 @@
 							</group>
 						</page>
 					</notebook>
+						</group>
+					</group>
+					
 				</sheet>
 			</form>
 		</field>
