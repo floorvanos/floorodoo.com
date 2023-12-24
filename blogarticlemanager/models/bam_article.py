@@ -57,7 +57,7 @@ class Article(models.Model):
     show_author_id = fields.Boolean('Show author', default=True)
     show_introtext = fields.Boolean('Show introtext', default=False)
     
-    @api.depends("name")
-    def _compute_alias(self):
-        for record in self:
-            record.alias = record.name.replace("  "," ").replace(" ","-").lower()
+    @api.onchange("name")
+    def _onchange_name(self):
+        self.name.replace("  "," ")
+        self.alias = self.name.replace(" ","-").lower()
