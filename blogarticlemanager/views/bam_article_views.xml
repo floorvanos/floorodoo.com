@@ -54,6 +54,8 @@
 								<field name="category_id" options="{'no_quick_create': True}"/>
 								<field name="author_id"/>
 								<field name="type_id"/>
+							</group>
+							<group>
 								<field name="tag_ids"/>
 								<field name="show_title"/>
 								<field name="show_date"/>
