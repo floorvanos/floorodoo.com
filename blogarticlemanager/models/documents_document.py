@@ -2,6 +2,6 @@
 
 from odoo import models
 
-class Document(models.Model):
+class DocumentsDocument(models.Model):
     _inherit = 'documents.document'
     _name = 'documents.document'
