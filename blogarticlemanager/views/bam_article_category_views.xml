@@ -17,10 +17,10 @@
         <field name="model">bam.article.category</field>
         <field name="arch" type="xml">
             <tree string="Article Categories">
+				<field name="sequence" widget="handle"/>
                 <field name="name"/>
 				<field name="parent_id"/>
-				<field name="sequence" widget="handle"/>
-            </tree>
+			</tree>
         </field>
     </record>
 	
@@ -34,6 +34,7 @@
 						<group>
 							<field name="name"/>
 							<field name="parent_id"/>
+							<field name="introtext"/>
 							<field name="sequence" widget="handle"/>
 						</group>
 					</group>

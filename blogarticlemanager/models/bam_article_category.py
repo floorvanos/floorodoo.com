@@ -13,4 +13,5 @@ class ArticleCategory(models.Model):
     
     name = fields.Char('Article Category Name', required=True)
     parent_id = fields.Many2one("bam.article.category", string="Parent Menu", placeholder="Root")
+    introtext = fields.Html('Intro Text')
     sequence = fields.Integer('Sequence', default=0)
