@@ -45,6 +45,7 @@
 						<page string="Content">
 							<group>
 								<field name="name"/>
+								<field name="alias"/>
 								<field name="introtext"/>
 								<field name="bodytext"/>
 							</group>
