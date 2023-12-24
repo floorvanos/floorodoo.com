@@ -4,4 +4,4 @@ from odoo import models
 
 class ArticleDocument(models.Model):
     _name = 'bam.article.document'
-    _inherit = ['documents.mixin']
+ #   _inherit = ['documents.mixin']
