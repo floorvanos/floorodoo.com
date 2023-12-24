@@ -3,5 +3,5 @@
 
 from odoo import api, models
 
-class DOcumentsDocument(models.Model):
+class ArticleDocument(models.Model):
     _inherit = 'documents.document'

@@ -10,6 +10,7 @@
     'website': 'https://floorodoo.com',
     'depends': [
         'base',
+        'documents',
     ],
     'data': [
         'security/ir.model.access.csv',
