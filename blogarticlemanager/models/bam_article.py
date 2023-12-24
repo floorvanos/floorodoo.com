@@ -60,4 +60,5 @@ class Article(models.Model):
     @api.depends("name")
     def _compute_alias(self):
         for record in self:
-            record.alias = name.lower()
+            record.alias = name.replace("  "," ").lower()
+            record.alias.replace(" ", "-")
