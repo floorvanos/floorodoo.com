@@ -1,6 +1,6 @@
 # part of BAM
 
-from odoo import models
+from odoo import api, models
 
-class DocumentsDocument(models.Model):
+class Document(models.Model):
     _inherit = 'documents.document'
