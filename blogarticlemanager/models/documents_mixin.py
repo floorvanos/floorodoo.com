@@ -3,4 +3,4 @@
 from odoo import models
 
 class DocumentMixin(models.Model):
-    _inherit = 'documents.mixin'
+    _inherit = "documents.mixin"
