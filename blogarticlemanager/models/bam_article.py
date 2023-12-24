@@ -12,7 +12,7 @@ class Article(models.Model):
     #article fields
     
     name = fields.Char('Title', required=True)
-    alias = fields.Char('Alias', compute="_compute_alias")
+    alias = fields.Char('Alias', compute="_compute_alias", store=True)
     # type = fields.One2many('bam.article.type', string="Type")
     # category = fields.One2many('bam.article.category', string="Category")
     
@@ -60,5 +60,4 @@ class Article(models.Model):
     @api.depends("name")
     def _compute_alias(self):
         for record in self:
-            record.alias = record.name.replace("  "," ").lower()
-            record.alias.replace(" ", "-")
+            record.alias = record.name.replace(" ","-").lower()
