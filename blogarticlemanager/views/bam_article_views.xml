@@ -46,7 +46,10 @@
 					<notebook>
 						<page string="Content">
 							<group>
-								<field name="name"/>
+								<div class="oe_title">
+                        <label for="name" string="Article Name"/>
+                        <h1><field class="text-break" name="name" placeholder="e.g Brand new exiting news item"/></h1>
+                    </div>
 								<field name="alias"/>
 								<field name="introtext"/>
 								<field name="bodytext"/>
