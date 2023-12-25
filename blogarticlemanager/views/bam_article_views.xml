@@ -40,9 +40,9 @@
 					</div>
 				</header>
 				<sheet>
-				<group>
+				<div class="oe_button_box">
 					<field name="state" widget="statusbar"/>
-				</group>	
+				</div>	
 					<notebook>
 						<page string="Content">
 							<group>
