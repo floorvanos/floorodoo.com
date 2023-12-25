@@ -61,7 +61,7 @@ class Article(models.Model):
     
     def action_publish_up(self):
         for record in self:
-            record.publish_up.Datetime.now()
+            record.publish_up = fields.Datetime.now()
         return True
     
     # computed fields
