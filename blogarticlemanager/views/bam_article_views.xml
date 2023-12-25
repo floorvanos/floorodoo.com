@@ -38,11 +38,10 @@
 					<div class="oe_button_box">
 						<button name="action_publish_up" type="object" string="Publish"/>
 					</div>
-					<widget name="web_ribbon" text="Archived" bg_color="bg-danger" attrs="{'invisible': [('state', '==', 'archived')]}"/>
-					<widget name="web_ribbon" text="Trashed" bg_color="bg-danger" attrs="{'invisible': [('state', '==', 'trashed')]}"/>
+					<widget name="web_ribbon" text="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
 				</header>
 				<sheet>
-				<div class="oe_button_box">
+				<div class="" style="float:right;">
 					<field name="state" widget="statusbar"/>
 				</div>	
 					<notebook>
