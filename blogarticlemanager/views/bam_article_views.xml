@@ -40,8 +40,9 @@
 					</div>
 				</header>
 				<sheet>
-				<field name="state" widget="statusbar"/>
-					
+				<group>
+					<field name="state" widget="statusbar"/>
+				</group>	
 					<notebook>
 						<page string="Content">
 							<group>
