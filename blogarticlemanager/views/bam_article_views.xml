@@ -64,7 +64,7 @@
 								<field name="type_id"/>
 							</group>
 							<group>
-								<field name="tag_ids"/>
+								<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
 								<field name="show_title"/>
 								<field name="show_date"/>
 								<field name="show_author_id"/>
