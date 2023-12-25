@@ -35,12 +35,13 @@
 		<field name="arch" type="xml">
 			<form>
 				<header>
-					<field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+					<div class="oe_button_box">
+						<button name="action_publish_up" type="object" string="Publish"/>
+					</div>
 				</header>
 				<sheet>
-					<div class="oe_button_box">
-						
-					</div>
+				<field name="state" widget="statusbar"/>
+					
 					<notebook>
 						<page string="Content">
 							<group>
