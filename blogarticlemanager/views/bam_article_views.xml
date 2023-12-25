@@ -39,7 +39,7 @@
 				</header>
 				<sheet>
 					<div class="oe_button_box">
-						<BUTTONS/>
+						<<button name="action_publish_up" type="object" string="Publish"/>
 					</div>
 					<notebook>
 						<page string="Content">

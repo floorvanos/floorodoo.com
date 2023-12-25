@@ -57,7 +57,18 @@ class Article(models.Model):
     show_author_id = fields.Boolean('Show author', default=True)
     show_introtext = fields.Boolean('Show introtext', default=False)
     
+    # buttons
+    
+    def action_publish_up(self):
+        for record in self:
+            record.publish_up.Datetime.now()
+        return True
+    
+    # computed fields
+    
     @api.onchange("name")
     def _onchange_name(self):
         self.name.replace("  "," ")
         self.alias = self.name.replace(" ","-").lower()
+        
+    
