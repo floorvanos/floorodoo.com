@@ -72,7 +72,7 @@ class Article(models.Model):
         self.alias = self.name.replace(" ","-").lower()
         
         
-    @api.constrains('publish_up', 'archive', 'trashed', '')
+    @api.constrains('publish_up', 'archive', 'trash', '')
     def _check_dates(self):
         for article in self:
             if article.archive < article.publish_up:
