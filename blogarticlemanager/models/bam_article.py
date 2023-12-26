@@ -77,6 +77,6 @@ class Article(models.Model):
         for article in self:
             if article.archive < article.publish_up:
                 raise ValidationError(_('The archiving date cannot be earlier than the publishing date.'))
-            if article.trashed < article.publish_up:
+            if article.trash < article.publish_up:
                 raise ValidationError(_('The trashing date cannot be earlier than the publishing date.'))
                 
