@@ -65,10 +65,18 @@ class Article(models.Model):
         return True
     
     # computed fields
-    
+    # make alias TODO
     @api.onchange("name")
     def _onchange_name(self):
         self.name.replace("  "," ")
         self.alias = self.name.replace(" ","-").lower()
         
-    
+        
+    @api.constrains('publish_up', 'archive', 'trashed', '')
+    def _check_dates(self):
+        for article in self:
+            if article.archive < article.publish_up:
+                raise ValidationError(_('The archiving date cannot be earlier than the publishing date.'))
+            if article.trashed < article.publish_up:
+                raise ValidationError(_('The trashing date cannot be earlier than the publishing date.'))
+                
