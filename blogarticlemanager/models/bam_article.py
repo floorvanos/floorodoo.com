@@ -76,8 +76,8 @@ class Article(models.Model):
     @api.constrains('publish_up', 'archive', 'trash', '')
     def _check_dates(self):
         for article in self:
-            if article.archive < article.publish_up:
-                raise ValidationError(_('The archiving date cannot be earlier than the publishing date.'))
-            if article.trash < article.publish_up:
-                raise ValidationError(_('The trashing date cannot be earlier than the publishing date.'))
+            if article.publish_up != '' and article.archive < article.publish_up and article.archive != '':
+                    raise ValidationError(_('The archiving date cannot be earlier than the publishing date.'))
+                if  article.publish_up != '' and article.trash < article.publish_up and article.trash != '':
+                    raise ValidationError(_('The trashing date cannot be earlier than the publishing date.'))
                 
