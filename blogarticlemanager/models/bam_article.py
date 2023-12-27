@@ -72,16 +72,19 @@ class Article(models.Model):
         for record in self:
             record.publish_up = fields.Datetime.now()
             record.state = 'published'
+            record.active = True
         return True
         
     def action_archive(self):
         for record in self:
             record.archive = fields.Datetime.now()
+            record.active = False
         return True
     
     def action_trash(self):
         for record in self:
             record.trash = fields.Datetime.now()
+            record.active = False
         return True    
     
     # computed fields
@@ -92,15 +95,20 @@ class Article(models.Model):
         for record in self:
             if record.publish_up and record.trash and record.trash <= fields.Datetime.now():
                 record.state = "trashed"
+                record.active = False
             elif record.publish_up and record.archive and record.archive <= fields.Datetime.now():
                 record.state = "archived"
+                record.active = False
             elif record.publish_up and record.publish_up <= fields.Datetime.now():
                 record.state = "published"
+                record.active = True
             elif record.publish_up and record.publish_up >= fields.Datetime.now():
                 record.state = "queued"
+                record.active = True
             else:
                 record.state = "draft"
-    
+                record.active = True
+                
     # to finish make alias
     @api.onchange("name")
     def _onchange_name(self):
