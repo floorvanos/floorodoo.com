@@ -90,13 +90,13 @@ class Article(models.Model):
     @api.depends("publish_up","archive","trash")
     def _compute_state(self):
         for record in self:
-            if record.publish_up and record.trash and record.trash - fields.Datetime.now() < 0:
+            if record.publish_up and record.trash and record.trash < fields.Datetime.now():
                 record.state = "trashed"
-            elif record.publish_up and record.archive and record.archive - fields.Datetime.now() < 0:
+            elif record.publish_up and record.archive and record.archive < fields.Datetime.now():
                 record.state = "archived"
-            elif record.publish_up and record.publish_up - fields.Datetime.now() < 0:
+            elif record.publish_up and record.publish_up < fields.Datetime.now():
                 record.state = "published"
-            elif record.publish_up and record.publish_up - fields.Datetime.now() > 0:
+            elif record.publish_up and record.publish_up > fields.Datetime.now():
                 record.state = "queued"
             else:
                 record.state = "draft"
