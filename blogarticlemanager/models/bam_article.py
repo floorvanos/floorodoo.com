@@ -40,7 +40,7 @@ class Article(models.Model):
         ('published', 'Published'),
         ('archived', 'Archived'),
         ('trashed', 'Trashed'),
-        ], string='State', required=True, default='draft')
+        ], string='State', required=True, default='draft', compute="_compute_state")
     
     #article media fields
     
@@ -60,13 +60,48 @@ class Article(models.Model):
     
     # buttons
     
+    def action_preview(self):
+        return True
+    
+    def action_draft(self):
+        for record in self:
+            record.publish_up = ''
+            record.state = 'draft'
+        
     def action_publish_up(self):
         for record in self:
             record.publish_up = fields.Datetime.now()
+            record.state = 'published'
+        return True
+        
+    def action_archive(self):
+        for record in self:
+            record.archive = fields.Datetime.now()
         return True
     
+    def action_trash(self):
+        for record in self:
+            record.trash = fields.Datetime.now()
+        return True    
+    
     # computed fields
-    # make alias TODO
+   
+    # this should also CRON
+    @api.depends("publish_up","archive","trash")
+    def _compute_state(self):
+        for record in self:
+            if record.publish_up and record.trash and record.trash - fields.Datetime.now() < 0:
+                record.state = "trashed"
+            elif record.publish_up and record.archive and record.archive - fields.Datetime.now() < 0:
+                record.state = "archived"
+            elif record.publish_up and record.publish_up - fields.Datetime.now() < 0:
+                record.state = "published"
+            elif record.publish_up and record.publish_up - fields.Datetime.now() > 0:
+                record.state = "queued"
+            else:
+                record.state = "draft"
+    
+    # to finish make alias
     @api.onchange("name")
     def _onchange_name(self):
         self.name.replace("  "," ")
