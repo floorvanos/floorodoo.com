@@ -96,7 +96,7 @@ class Article(models.Model):
                 record.state = "archived"
             elif record.publish_up and record.publish_up <= fields.Datetime.now():
                 record.state = "published"
-            elif record.publish_up and record.publish_up => fields.Datetime.now():
+            elif record.publish_up and record.publish_up >= fields.Datetime.now():
                 record.state = "queued"
             else:
                 record.state = "draft"
@@ -111,8 +111,8 @@ class Article(models.Model):
     @api.constrains('publish_up', 'archive', 'trash', '')
     def _check_dates(self):
         for article in self:
-            if article.publish_up and article.archive and article.archive <= article.publish_up:
+            if article.publish_up and article.archive and article.archive < article.publish_up:
                 raise ValidationError(_('The archiving date cannot be earlier than the publishing date.'))
-            if article.publish_up and article.trash and article.trash <= article.publish_up:
+            if article.publish_up and article.trash and article.trash < article.publish_up:
                 raise ValidationError(_('The trashing date cannot be earlier than the publishing date.'))
                 
