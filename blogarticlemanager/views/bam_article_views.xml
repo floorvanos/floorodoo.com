@@ -85,9 +85,11 @@
 							<group>
 								<field name="publish_up"/>
 								<field name="archive"/>
+								<field name="sequence" widget="handle"/>
+								<separator/>
 								<field name="state"/>
 								<field name="active"/>
-								<field name="sequence" widget="handle"/>
+								
 							</group>
 						</page>
 						<page string="Vacancy">

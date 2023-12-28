@@ -25,7 +25,7 @@ class Article(models.Model):
     
     publish_up = fields.Datetime('Publish')
     archive = fields.Datetime('Archive')
-    active = fields.Boolean('Active', default=True)
+    active = fields.Boolean('Active', default=True, readonly=True)
     sequence = fields.Integer('Sequence', default=10)
     
     #article property fields
@@ -82,7 +82,7 @@ class Article(models.Model):
     # computed fields
    
     # this should also CRON
-    @api.depends("publish_up","archive")
+    @api.depends('publish_up', 'archive')
     def _compute_state(self):
         for record in self:
             if record.publish_up and record.archive and record.archive <= fields.Datetime.now():
