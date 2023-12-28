@@ -118,7 +118,11 @@
 				<separator/>
 				
 				<separator/>
-                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                <filter string="Draft" name="state" domain="[('state', '=', 'draft')]"/>
+				<filter string="Queued" name="state" domain="[('state', '=', 'queued')]"/>
+				<filter string="Published" name="state" domain="[('state', '=', 'published')]"/>
+				<filter string="Archived" name="state" domain="[('state', '=', 'archived')]"/>
+				
 				<group expand="1" string="Group By">
                         <filter string="State" name="state" domain="[]" context="{'group_by': 'state'}"/>
 						<filter string="Category" name="category_id" domain="[]" context="{'group_by': 'category_id'}"/>
