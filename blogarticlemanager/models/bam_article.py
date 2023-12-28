@@ -65,7 +65,7 @@ class Article(models.Model):
         for record in self:
             record.publish_up = ''
             record.state = 'draft'
-        
+    
     def action_publish_up(self):
         for record in self:
             record.publish_up = fields.Datetime.now()
@@ -75,7 +75,7 @@ class Article(models.Model):
     def action_archive(self):
         for record in self:
             record.archive = fields.Datetime.now()
-            record.active = False
+            record.state = 'archived'
         return True
  
     # computed fields
@@ -89,10 +89,13 @@ class Article(models.Model):
                 record.active = False
             elif record.publish_up and record.publish_up <= fields.Datetime.now():
                 record.state = "published"
+                record.active = True
             elif record.publish_up and record.publish_up >= fields.Datetime.now():
                 record.state = "queued"
+                record.active = True
             else:
                 record.state = "draft"
+                record.active = True
                 
     @api.constrains('publish_up', 'archive')
     def _check_dates(self):
