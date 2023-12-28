@@ -38,7 +38,6 @@
 					<div class="oe_button_box">
 						<button name="action_publish_up" type="object" string="Publish"/>
 						<button name="action_archive" type="object" string="Archive"/>
-						<button name="action_trash" type="object" string="Trash"/>
 					</div>
 					<widget name="web_ribbon" text="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
 				</header>
@@ -89,7 +88,6 @@
 							<group>
 								<field name="publish_up"/>
 								<field name="archive"/>
-								<field name="trash"/>
 								<field name="state"/>
 								<field name="active"/>
 								<field name="sequence" widget="handle"/>

@@ -80,34 +80,22 @@ class Article(models.Model):
             record.archive = fields.Datetime.now()
             record.active = False
         return True
-    
-    def action_trash(self):
-        for record in self:
-            record.trash = fields.Datetime.now()
-            record.active = False
-        return True    
-    
+ 
     # computed fields
    
     # this should also CRON
     @api.depends("publish_up","archive","trash")
     def _compute_state(self):
         for record in self:
-            if record.publish_up and record.trash and record.trash <= fields.Datetime.now():
-                record.state = "trashed"
-                record.active = False
-            elif record.publish_up and record.archive and record.archive <= fields.Datetime.now():
+             if record.publish_up and record.archive and record.archive <= fields.Datetime.now():
                 record.state = "archived"
                 record.active = False
             elif record.publish_up and record.publish_up <= fields.Datetime.now():
                 record.state = "published"
-                record.active = True
             elif record.publish_up and record.publish_up >= fields.Datetime.now():
                 record.state = "queued"
-                record.active = True
             else:
                 record.state = "draft"
-                record.active = True
                 
     # to finish make alias
     @api.onchange("name")
@@ -116,11 +104,9 @@ class Article(models.Model):
         self.alias = self.name.replace(" ","-").lower()
         
         
-    @api.constrains('publish_up', 'archive', 'trash', '')
+    @api.constrains('publish_up', 'archive')
     def _check_dates(self):
         for article in self:
             if article.publish_up and article.archive and article.archive < article.publish_up:
                 raise ValidationError(_('The archiving date cannot be earlier than the publishing date.'))
-            if article.publish_up and article.trash and article.trash < article.publish_up:
-                raise ValidationError(_('The trashing date cannot be earlier than the publishing date.'))
                 
