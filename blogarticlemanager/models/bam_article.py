@@ -70,7 +70,6 @@ class Article(models.Model):
         for record in self:
             record.publish_up = fields.Datetime.now()
             record.state = 'published'
-            record.active = True
         return True
         
     def action_archive(self):
