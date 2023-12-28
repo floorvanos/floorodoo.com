@@ -25,7 +25,6 @@ class Article(models.Model):
     
     publish_up = fields.Datetime('Publish')
     archive = fields.Datetime('Archive')
-    trash = fields.Datetime('Trash')
     active = fields.Boolean('Active', default=True)
     sequence = fields.Integer('Sequence', default=10)
     
@@ -39,7 +38,6 @@ class Article(models.Model):
         ('queued', 'Queued'),
         ('published', 'Published'),
         ('archived', 'Archived'),
-        ('trashed', 'Trashed'),
         ], string='State', required=True, default='draft', compute="_compute_state")
     
     #article media fields
@@ -84,7 +82,7 @@ class Article(models.Model):
     # computed fields
    
     # this should also CRON
-    @api.depends("publish_up","archive","trash")
+    @api.depends("publish_up","archive")
     def _compute_state(self):
         for record in self:
              if record.publish_up and record.archive and record.archive <= fields.Datetime.now():
@@ -97,16 +95,15 @@ class Article(models.Model):
             else:
                 record.state = "draft"
                 
-    # to finish make alias
-    @api.onchange("name")
-    def _onchange_name(self):
-        self.name.replace("  "," ")
-        self.alias = self.name.replace(" ","-").lower()
-        
-        
     @api.constrains('publish_up', 'archive')
     def _check_dates(self):
         for article in self:
             if article.publish_up and article.archive and article.archive < article.publish_up:
                 raise ValidationError(_('The archiving date cannot be earlier than the publishing date.'))
+                
+    # to finish make alias
+    @api.onchange("name")
+    def _onchange_name(self):
+        self.name.replace("  "," ")
+        self.alias = self.name.replace(" ","-").lower()
                 
