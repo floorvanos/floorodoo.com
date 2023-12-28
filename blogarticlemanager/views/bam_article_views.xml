@@ -113,19 +113,16 @@
 				<field name="author_id" string="Author"/>
 				<field name="publish_up" string="Publicatiedatum"/>
 				<separator/>
-				
-				<separator/>
                 <filter string="Draft" name="state" domain="[('state', '=', 'draft')]"/>
 				<filter string="Queued" name="state" domain="[('state', '=', 'queued')]"/>
 				<filter string="Published" name="state" domain="[('state', '=', 'published')]"/>
 				<filter string="Archived" name="state" domain="[('state', '=', 'archived')]"/>
-				
 				<group expand="1" string="Group By">
-                        <filter string="State" name="state" domain="[]" context="{'group_by': 'state'}"/>
-						<filter string="Category" name="category_id" domain="[]" context="{'group_by': 'category_id'}"/>
-						<filter string="Type" name="type_id" domain="[]" context="{'group_by': 'type_id'}"/>
-						<filter string="Tag" name="tag_ids" domain="[]" context="{'group_by': 'tag_ids'}"/>
-						<filter string="Author" name="author_d" domain="[]" context="{'group_by': 'author_id'}"/>
+                    <filter string="State" name="state" domain="[]" context="{'group_by': 'state'}"/>
+					<filter string="Category" name="category_id" domain="[]" context="{'group_by': 'category_id'}"/>
+					<filter string="Type" name="type_id" domain="[]" context="{'group_by': 'type_id'}"/>
+					<filter string="Tag" name="tag_ids" domain="[]" context="{'group_by': 'tag_ids'}"/>
+					<filter string="Author" name="author_d" domain="[]" context="{'group_by': 'author_id'}"/>
                 </group>
 			</search>
 		</field>

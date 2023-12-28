@@ -38,7 +38,7 @@ class Article(models.Model):
         ('queued', 'Queued'),
         ('published', 'Published'),
         ('archived', 'Archived'),
-        ], string='State', required=True, default='draft', compute="_compute_state", store=True)
+        ], string='State', required=True, default='draft', compute="_compute_state")
     
     #article media fields
     
@@ -65,6 +65,7 @@ class Article(models.Model):
         for record in self:
             record.publish_up = ''
             record.state = 'draft'
+        return True
     
     def action_publish_up(self):
         for record in self:
@@ -89,13 +90,10 @@ class Article(models.Model):
                 record.active = False
             elif record.publish_up and record.publish_up <= fields.Datetime.now():
                 record.state = "published"
-                record.active = True
             elif record.publish_up and record.publish_up >= fields.Datetime.now():
                 record.state = "queued"
-                record.active = True
             else:
                 record.state = "draft"
-                record.active = True
                 
     @api.constrains('publish_up', 'archive')
     def _check_dates(self):
