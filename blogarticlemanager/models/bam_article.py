@@ -84,7 +84,7 @@ class Article(models.Model):
     @api.depends("publish_up","archive")
     def _compute_state(self):
         for record in self:
-             if record.publish_up and record.archive and record.archive <= fields.Datetime.now():
+            if record.publish_up and record.archive and record.archive <= fields.Datetime.now():
                 record.state = "archived"
                 record.active = False
             elif record.publish_up and record.publish_up <= fields.Datetime.now():
