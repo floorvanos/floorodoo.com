@@ -38,7 +38,7 @@ class Article(models.Model):
         ('queued', 'Queued'),
         ('published', 'Published'),
         ('archived', 'Archived'),
-        ], string='State', required=True, default='draft', compute="_compute_state")
+        ], string='State', store=True, required=True, default='draft', compute="_compute_state")
     
     #article media fields
     
