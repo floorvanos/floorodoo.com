@@ -76,9 +76,6 @@
 								<group>
 									<field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
 								</group>
-								<group>
-									
-								</group>
 							</group>
 							<group>
 								<field name="document_ids"/>
@@ -86,7 +83,11 @@
 						</page>
 						<page string="Publishing">
 							<group>
-								
+								<field name="publish_up"/>
+								<field name="archive"/>
+								<field name="state"/>
+								<field name="active"/>
+								<field name="sequence" widget="handle"/>
 							</group>
 						</page>
 						<page string="Vacancy">
